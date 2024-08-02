@@ -154,27 +154,25 @@
       }
       $.ajax({
 	      type: "POST",
-	      url: "http://13.51.242.9:3000/send-email",
+	      url: "https://wwenonitr6.execute-api.us-east-1.amazonaws.com/dev/send-email",
 	      data: JSON.stringify(data),
-         contentType: "application/json; charset=utf-8",
-         traditional: true,
+	      contentType: "application/json; charset=utf-8",
+	      traditional: true,
 	      success: function(msg) {
-            // Message was sent
-            if (msg.success === true) {
-               $('#image-loader').fadeOut();
-               $('#message-warning').hide();
-               $('#contactForm').fadeOut();
-               $('#message-success').fadeIn();   
-            }
-            // There was an error
-            else {
-               $('#image-loader').fadeOut();
-               $('#message-warning').html(msg);
-	            $('#message-warning').fadeIn();
-            }
-
+	            // Message was sent
+	            if (msg.success === true) {
+	               $('#image-loader').fadeOut();
+	               $('#message-warning').hide();
+	               $('#contactForm').fadeOut();
+	               $('#message-success').fadeIn();   
+	            }
+	            // There was an error
+	            else {
+	               $('#image-loader').fadeOut();
+	               $('#message-warning').html(msg);
+		            $('#message-warning').fadeIn();
+	            }
 	      }
-
       });
       return false;
    });
