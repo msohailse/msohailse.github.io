@@ -462,22 +462,6 @@ h1, h2, h3 {
   .timeline li { grid-template-columns: 1fr; gap: 8px; }
 }
 
-/* ---------- resume ---------- */
-
-.resume-embed {
-  border: 1px solid rgba(31, 27, 22, 0.12);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.resume-embed embed {
-  display: block;
-}
-
-@media (max-width: 700px) {
-  .resume-embed embed { height: 600px; }
-}
-
 /* ---------- writing ---------- */
 
 .writing-grid {
