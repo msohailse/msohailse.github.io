@@ -1,0 +1,229 @@
+\documentclass{res} % Overlapped headings (default), negative skips removed in res.cls
+
+% ------------------------------------------------------------------------------
+% Packages
+% ------------------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+}
+\usepackage{marvosym}
+\usepackage{ifsym}
+\usepackage{varwidth}
+\usepackage{xcolor}
+\usepackage{pdfrender} % If you need text outlining or special rendering
+
+% ------------------------------------------------------------------------------
+% Optional: fancyhdr for header settings
+% ------------------------------------------------------------------------------
+% Use minimal page style (no header/footer rules) and define centered section macro
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+\pagestyle{empty}
+\cfoot{}
+\topmargin=0pt
+
+% Centered section heading macro for consistent spacing/centering
+\newcommand{\Section}[1]{%
+  \vspace{8pt}% space before
+  \begin{center}
+    {\bfseries #1}
+  \end{center}
+  \vspace{2pt}% space after
+}
+
+% ------------------------------------------------------------------------------
+% Begin Document
+% ------------------------------------------------------------------------------
+\begin{document}
+\thispagestyle{empty}
+
+% -------------------------
+% NAME & TOP CONTACT
+% -------------------------
+
+\begin{center}
+ {\Large\bfseries \href{https://sohail0992.github.io}{Muhammad Sohail}} \\[4pt]
+  \faMapMarker\ Firenze, Italy \\[4pt]
+  \Letter\ \href{mailto:msohail.se@gmail.com}{msohail.se@gmail.com} \quad
+  \Mobilefone\ +39 392 803 6934 \\[4pt]
+  \faGithub\ \href{https://github.com/sohail0992}{sohail0992} \quad
+  \faLinkedin\ \href{https://linkedin.com/in/sohail0992}{sohail0992} \quad
+  \faStackOverflow\ \href{https://stackoverflow.com/users/sohail0992}{sohail0992}
+\end{center}
+
+
+\begin{resume}
+
+
+% -------------------------
+% EDUCATION
+% -------------------------
+\Section{EDUCATION}
+  \textbf{Riphah International University} \hfill Spring 2018\\
+  {\sl BS, Software Engineering}
+
+% -------------------------
+% WORK EXPERIENCE
+% -------------------------
+\Section{WORK EXPERIENCE}
+
+
+  % ---- Trident Marketing ----
+  \textbf{Trident Marketing} \hfill Sep 2018 -- Present\\
+  {\sl Tech Lead}
+  \begin{itemize}
+    \item Integrated mobile apps with external booking systems and third-party services to streamline business operations (REST, WebSockets, ElasticSearch).
+    \item Architected scalable microservices and hybrid mobile solutions, leveraging Node.js, TypeScript, and MongoDB to support enterprise-level requirements. Designed system architecture patterns, API gateways, and authentication flows (JWT/OAuth) for secure, cloud-native applications.
+    \item Designed and co-architected the TRA API to manage real-time data flow between multiple apps and external booking systems, leveraging REST API principles for scalability and efficiency. (Node.js, TypeScript).
+    \item Designed the TRADB (MongoDB) schema for large-scale data handling and integrations.
+    \item Optimized system performance and scalability by managing real-time synchronization across multiple Elastic indices, applying caching strategies, and tuning database queries.
+    \item Enabled booking-to-sales conversion by updating household records, converting leads to members, and indexing data in the Manifest System.
+    \item Built the Engage App using Angular and TypeScript, enabling agents to track customer data (e.g., demographics, call history) and manage bookings within the same platform, significantly streamlining campaign workflows and improving agent productivity. 
+    \item Engineered the Manifest System (Angular, Node.js) to track bookings, agent performance, commissions, and the overall sales lifecycle.
+    \item Developed the DNQ System, a multi-part survey platform:
+      \begin{itemize}
+        \item Backend uses a tree data structure for complex survey logic.
+        \item Frontend built with Ionic (Angular, Node.js).
+      \end{itemize}
+    \item Contributed to the Lead Input Application (LIA) UI for uploading leads to S3 and splitting large PDFs (Angular, Node.js).
+    \item Created various survey management platforms using Ionic.
+    \item Implemented a message broker for high-volume calls, integrating with TRADB for faster processing.
+    \item  Built WebSocket-based solutions for real-time notifications, integrated with REST APIs to enhance scalability (e.g., member reservations). \smallskip
+    \item \emph{Python}:
+      \begin{itemize}
+        \item Deployed Google Cloud Vision to convert handwritten forms into digital data.
+        \item Used ChatGPT for data analysis, KPI derivation, and pre-filling forms.
+        \item Created a FastAPI-based rule engine for reservation eligibility using historical data.
+        \item Wrote behavior-driven tests using Behave.
+        \item Performed data cleaning with Pandas and built Jupyter notebooks for analysis.
+      \end{itemize}
+    \item \emph{Infrastructure \& CI/CD}:
+      \begin{itemize}
+        \item Optimized MongoDB cluster configurations, reducing operational costs by approximately saving \$12,000 annually while maintaining system performance and reliability. (MongoDB)
+        \item Led Kubernetes-based deployments and CI/CD pipeline improvements (Jenkins, GitHub Actions), incorporating Infrastructure as Code (IaC) practices to enhance scalability, resilience, and operational efficiency.
+        \item Maintained real-time sync with Elastic indices.
+        \item Created unit/behavior tests (Selenium, Chai, Mocha, Cypress) and integrated GitHub pipelines (JavaScript, Node.js).
+        \item Configured Jenkins pipelines for automated test reporting.
+      \end{itemize}
+  \end{itemize}
+
+  % ---- Code for Pakistan ----
+  \textbf{Code For Pakistan (Volunteer)} \hfill Mar 2021 -- Present\\
+  {\sl Web Engineer/Flutter Developer}
+  \begin{itemize}
+    \item Integrated a WhatsApp chatbot for patient surveys, enabling identification and random assignment of high-risk patients to volunteer doctors (React, Node.js, PostgreSQL).
+    \item Built a Flutter-based mobile app for lab evaluations (LAARC-standard surveys) paired with a Vue.js dashboard for performance reporting (Flutter, Vue.js, Node.js).
+    \item Collaborated with WHO and NIH as a Solutions Engineer to architect and implement secure healthcare applications (\href{https://apps.apple.com/pk/app/hcai-surveillance-app/id1618890798}{HCAI app}) using Flutter, Vue.js, Node.js, and MongoDB. Applied system design principles, microservices architecture, and performance tuning while documenting architecture and workflows to improve healthcare protocols and post-surgery infection tracking. (Flutter, Vue, Node.js, MongoDB)
+    \item Conducted training sessions for the KP Women Program, equipping  \href{https://github.com/codeforpakistan/first-commit}{participants} with essential version control skills to enhance their collaborative development workflows.
+    \item Facilitated the interview process in 2025 to hire mentors and candidates for the  
+          \href{https://codeforpakistan.org/programs/internships/kp-women}{KP Women Program}.
+  \end{itemize}
+
+  % ---- MERN Stack ----
+  \textbf{Jeddah Soft} \hfill Sep 2018 -- Dec 2018\\
+  {\sl Mern Stack Developer (Remote Part Time)}
+  \begin{itemize}
+    \item \emph{Doctor App} (MySQL, React, Node.js):
+      \begin{itemize}
+        \item Built a React + Bootstrap dashboard for managing doctor appointments.
+        \item Implemented Highcharts for admin reporting.
+        \item Maintained a session-based shopping cart tied to user authentication.
+      \end{itemize}
+    \item \emph{ShopAPI (Open Source):}
+      \begin{itemize}
+        \item See the \href{https://github.com/sohail0992/shopapi}{ShopAPI GitHub repo} (Express/Node.js + WebSockets).
+        \item Uploaded and indexed files/images via Cloudinary.
+        \item Maintained session-based shopping cart logic.
+      \end{itemize}
+  \end{itemize}
+
+  % ---- Internee ----
+  \textbf{xFlow Research Inc.} \hfill Oct 2016 -- Feb 2017\\
+  {\sl Internee} \smallskip
+  \begin{itemize}
+    \item Developed a VR \href{https://github.com/sohail0992/basketBallGame}{basketball game} for HTC Vive.  
+   
+  \end{itemize}
+% -------------------------
+% OTHER PROJECTS
+% -------------------------
+\Section{Other Projects}
+  {\sl  Text to Speech} \smallskip
+  Text to Speech
+  \begin{itemize} \smallskip
+    \item Built real-time transcription microservices with WebSocket and REST API integrations, optimizing streaming and KPI extraction processes.
+    \item Developed a microservice leveraging WebSockets to stream call recordings to Watson Speech-to-Text, enabling real-time transcription and automated KPI extraction.
+    \item Designed the system to identify sensitive information, such as unintended requests for passcodes or restricted data, enhancing compliance and security.
+
+  \end{itemize}
+% -------------------------
+% SKILLS (TWO-COLUMN)
+% -------------------------
+\Section{Skills}
+\begin{varwidth}[t]{0.48\linewidth}
+\begin{itemize}
+  \item System Design \& Architecture Patterns (Microservices, API Gateway, Event-driven Systems)
+  \item JavaScript (Angular, React, Vue, Ionic)
+  \item Node.js \& TypeScript
+  \item Python (FastAPI, Pandas, Jupyter)
+  \item GraphQL
+  \item Flutter, ionic
+  \item Selenium, Cypress, Protractor, Mocha, Chai
+  \item BDD (Cucumber, Behave)
+\end{itemize}
+\end{varwidth}
+\hfill
+\begin{varwidth}[t]{0.48\linewidth}
+\begin{itemize}
+  \item Cross-functional Team Leadership \& Stakeholder Communication
+  \item Performance Optimization \& Scalability
+  \item MongoDB, MySQL, MsSQL
+  \item Docker, Kubernetes, CI/CD
+  \item Jenkins, GitHub Actions
+  \item AWS (S3, Elastic)   \hfill \href{https://cp.certmetrics.com/amazon/en/public/verify/credential/6P5QC70DEB141536}{AWS Certified}\\
+  \item Message Brokers, WebSockets
+  \item Git (GitHub, GitLab)
+  \item Google Cloud Vision, ChatGPT
+\end{itemize}
+\end{varwidth}
+
+
+% -------------------------
+% SCHOOL PROJECTS
+% -------------------------
+\Section{School Projects}
+  Honeypot Analysis and Visualization Tool (FYP) 
+  \begin{itemize}\smallskip
+    \item Analyzed data from honeypots (Dionaea, Suricata, Kippo).
+    \item Visualized data intensity on geographical maps.
+    \item Centralized data in MongoDB for increased performance.
+  \end{itemize}
+
+  \href{https://youtu.be/0133H3u1IlU}{{\large Encrypted Document Vault with Sharing Control (Distributed Secure Platform)}}
+  \begin{itemize}\smallskip
+    \item Engineered a secure, distributed document vault platform for sharing sensitive files with full owner control, utilizing Go (Golang) for high-performance backend services and Angular/JavaScript for a responsive frontend.
+    \item Designed a multi-instance distributed architecture to support horizontal scaling, ensuring system-wide state consistency (e.g., document deletion/access revocation) by using RabbitMQ (AMQP) for reliable event dispatching across all instances.
+    \item Implemented a real-time ``Eye Tracking System'' via WebSockets to instantly notify document owners of current viewers, tracking access by IP address and browser fingerprint for traceability.
+    \item Enforced comprehensive security, including AES-256 file encryption with user-specific keys, configurable time-limited/burn-once links, and instant system-wide access revocation.
+    \item Integrated anti-capture measures including watermarking and client-side hardening to restrict copying, downloading, and developer tool access within the document view.
+    \item Utilized Docker and Docker Compose for containerization and deployment, structuring the backend with a clean repository pattern using Go generics for testability and separation of concerns.
+  \end{itemize}
+
+% -------------------------
+% ACHIEVEMENTS & INTERESTS
+% -------------------------
+\Section{Achievements/Interests}
+\begin{itemize}
+    \item Ten Community Alumni Team Lead
+    \item \href{https://github.com/sohail0992/js-algorithms.git}{Problem Solving}
+\end{itemize}
+
+\end{resume}
+\end{document}

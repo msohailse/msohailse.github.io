@@ -1,0 +1,28 @@
+name: Build resume PDF
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "resume/resume.tex"
+      - "resume/res.cls"
+      - ".github/workflows/build-resume.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume.tex
+          working_directory: resume
+
+      - name: Commit compiled PDF
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Rebuild resume.pdf from resume.tex"
+          file_pattern: resume/resume.pdf
