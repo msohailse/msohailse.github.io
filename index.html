@@ -533,7 +533,7 @@
         message: document.getElementById("cf-message").value.trim(),
         company: document.getElementById("cf-company").value,
       };
-      fetch("https://api.msohail.work/contact", {
+      fetch("https://email.msohail.work/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
