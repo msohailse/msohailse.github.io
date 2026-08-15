@@ -488,32 +488,35 @@
   </section>
 
   <section class="section contact" id="contact">
-    <div class="wrap contact-inner">
-      <h2 class="section-heading">Get in touch</h2>
-      <p class="section-sub">Have a question or a role in mind? Send a message below.</p>
-      <form class="contact-form" id="contactForm" novalidate>
-        <div class="form-row">
-          <label for="cf-name">Name</label>
-          <input type="text" id="cf-name" name="name" autocomplete="name" required>
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-intro">
+          <p class="eyebrow">Let's talk</p>
+          <h2 class="section-heading">Get in touch</h2>
+          <p class="section-sub">Have a question, a role, or an idea worth building? Tell me about it — I read every message and reply personally, usually within a day or two.</p>
         </div>
-        <div class="form-row">
-          <label for="cf-email">Email</label>
-          <input type="email" id="cf-email" name="email" autocomplete="email" required>
+        <div class="contact-card">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" autocomplete="name" required>
+            </div>
+            <div class="form-row">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" autocomplete="email" required>
+            </div>
+            <div class="form-row">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="5" required></textarea>
+            </div>
+            <input type="text" name="company" id="cf-company" class="hp-field" tabindex="-1" autocomplete="off">
+            <button type="submit" class="btn btn-primary" id="cf-submit">
+              <span class="btn-spinner" id="cf-spinner" aria-hidden="true"></span>
+              <span id="cf-btn-label">Send message</span>
+            </button>
+            <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
+          </form>
         </div>
-        <div class="form-row">
-          <label for="cf-message">Message</label>
-          <textarea id="cf-message" name="message" rows="5" required></textarea>
-        </div>
-        <input type="text" name="company" id="cf-company" class="hp-field" tabindex="-1" autocomplete="off">
-        <button type="submit" class="btn btn-primary" id="cf-submit">
-          <span class="btn-spinner" id="cf-spinner" aria-hidden="true"></span>
-          <span id="cf-btn-label">Send message</span>
-        </button>
-        <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
-      </form>
-      <div class="contact-links">
-        <a href="https://linkedin.com/in/sohail0992" target="_blank" rel="noopener">linkedin.com/in/sohail0992</a>
-        <a href="https://github.com/msohailse" target="_blank" rel="noopener">github.com/msohailse</a>
       </div>
     </div>
   </section>

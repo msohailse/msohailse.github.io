@@ -512,22 +512,43 @@ h1, h2, h3 {
 
 /* ---------- contact ---------- */
 
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.contact-intro { padding-top: 6px; }
+.contact-intro .section-heading { margin-top: 2px; }
+.contact-intro .section-sub { margin-bottom: 0; }
+
+.contact-card {
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 36px;
+}
+
+@media (max-width: 800px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+  .contact-card { padding: 28px 24px; }
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  max-width: 520px;
-  margin-top: 24px;
+  gap: 20px;
 }
 
-.form-row { display: flex; flex-direction: column; gap: 6px; }
+.form-row { display: flex; flex-direction: column; gap: 8px; }
 
 .form-row label {
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 12px;
   color: var(--ink-soft);
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.06em;
 }
 
 .form-row input,
@@ -535,17 +556,19 @@ h1, h2, h3 {
   font-family: var(--sans);
   font-size: 16px;
   color: var(--ink);
-  background: var(--paper-raised);
+  background: var(--paper);
   border: 1px solid var(--rule);
   border-radius: 4px;
-  padding: 10px 12px;
+  padding: 11px 14px;
   resize: vertical;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .form-row input:focus,
 .form-row textarea:focus {
   outline: none;
   border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
 .contact-form .btn {
@@ -555,6 +578,7 @@ h1, h2, h3 {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  margin-top: 4px;
 }
 
 .contact-form .btn:disabled { opacity: 0.75; cursor: default; }
@@ -599,17 +623,6 @@ h1, h2, h3 {
   border-radius: 4px;
   padding: 10px 12px;
 }
-
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  font-family: var(--mono);
-  font-size: 16px;
-  margin-top: 32px;
-}
-.contact-links a { text-decoration: none; }
-.contact-links a:hover { color: var(--accent); }
 
 /* ---------- footer ---------- */
 
