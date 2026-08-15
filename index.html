@@ -505,7 +505,10 @@
           <textarea id="cf-message" name="message" rows="5" required></textarea>
         </div>
         <input type="text" name="company" id="cf-company" class="hp-field" tabindex="-1" autocomplete="off">
-        <button type="submit" class="btn btn-primary" id="cf-submit">Send message</button>
+        <button type="submit" class="btn btn-primary" id="cf-submit">
+          <span class="btn-spinner" id="cf-spinner" aria-hidden="true"></span>
+          <span id="cf-btn-label">Send message</span>
+        </button>
         <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
       </form>
       <div class="contact-links">
@@ -521,12 +524,14 @@
     if (!form) return;
     var status = document.getElementById("cf-status");
     var submit = document.getElementById("cf-submit");
+    var label = document.getElementById("cf-btn-label");
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       status.textContent = "";
       status.className = "form-status";
       submit.disabled = true;
-      submit.textContent = "Sending…";
+      submit.classList.add("is-loading");
+      label.textContent = "Sending…";
       var payload = {
         name: document.getElementById("cf-name").value.trim(),
         email: document.getElementById("cf-email").value.trim(),
@@ -543,7 +548,7 @@
           return res.json();
         })
         .then(function () {
-          status.textContent = "Message sent — thanks, I'll get back to you soon.";
+          status.textContent = "✓ Message sent — thanks! I'll get back to you soon.";
           status.className = "form-status ok";
           form.reset();
         })
@@ -553,7 +558,8 @@
         })
         .finally(function () {
           submit.disabled = false;
-          submit.textContent = "Send message";
+          submit.classList.remove("is-loading");
+          label.textContent = "Send message";
         });
     });
   })();
