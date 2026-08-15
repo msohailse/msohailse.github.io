@@ -521,7 +521,13 @@ h1, h2, h3 {
 
 .contact-intro { padding-top: 6px; }
 .contact-intro .section-heading { margin-top: 2px; }
-.contact-intro .section-sub { margin-bottom: 0; }
+.contact-intro .section-sub { margin-bottom: 8px; }
+
+.contact-note {
+  font-size: 13.5px;
+  color: var(--ink-faint);
+  margin: 0;
+}
 
 .contact-card {
   background: var(--paper-raised);
