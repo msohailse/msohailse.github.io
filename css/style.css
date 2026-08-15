@@ -512,6 +512,56 @@ h1, h2, h3 {
 
 /* ---------- contact ---------- */
 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 520px;
+  margin-top: 24px;
+}
+
+.form-row { display: flex; flex-direction: column; gap: 6px; }
+
+.form-row label {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.form-row input,
+.form-row textarea {
+  font-family: var(--sans);
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.contact-form .btn { align-self: flex-start; border: 1px solid var(--accent); cursor: pointer; }
+
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.form-status { font-size: 14px; min-height: 20px; margin: 0; }
+.form-status.ok { color: #3a7a4e; }
+.form-status.err { color: var(--accent); }
+
 .contact-links {
   display: flex;
   flex-direction: column;
