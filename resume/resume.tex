@@ -229,7 +229,7 @@
   \end{itemize}
 
 % -------------------------
-% SKILLS (SINGLE-COLUMN)
+% SKILLS
 % -------------------------
   \section{\centerline{Skills}}
   \begin{itemize}
@@ -241,46 +241,39 @@
     \item \textbf{Architecture \& Practices}: System Design, Microservices, API Gateway, Event-Driven Systems, Performance Optimization, Scalability, Cloud Native Architecture, System Architecture Patterns, Hybrid Mobile Architecture, Distributed Systems Architecture
     \item \textbf{Tools}: Jupyter, NetBeans, Eclipse, VS Code, HTC Vive
   \end{itemize}
-  \hfill
-  \begin{varwidth}[t]{0.48\linewidth}
+
+% -------------------------
+% PROJECTS \& RESEARCH
+% -------------------------
+  \section{\centerline{Projects \& Research}}
+  
+  \textbf{Honeypot Analysis and Visualization Tool (FYP)}\\
+  {\sl Data Analysis, MongoDB, Geo-Mapping} \smallskip
   \begin{itemize}
-    \item \textbf{Cloud \& DevOps}: \href{https://cp.certmetrics.com/amazon/en/public/verify/credential/6P5QC70DEB141536}{\faExternalLink\ AWS Certified} (SNS/SQS), GCP (Compute Engine, Networking), Docker, Kubernetes, CI/CD, Jenkins, GitHub Actions, Apache, RabbitMQ, Kafka, Message Brokers, WebSockets, Cloudinary, Git (GitHub, GitLab)
-    \item \textbf{Tools}: Jupyter, NetBeans, Eclipse, VS Code, HTC Vive
-    \item \textbf{Architecture \& Practices}: System Design, Microservices, API Gateway, Event-Driven Systems, Performance Optimization, Scalability, Cloud Native Architecture, System Architecture Patterns, Hybrid Mobile Architecture, Distributed Systems Architecture
+    \item Analyzed security data from various honeypots (Dionaea, Suricata, Kippo).
+    \item Visualized attack data intensity on interactive geographical maps.
+    \item Centralized data ingestion pipeline in MongoDB for increased query performance.
   \end{itemize}
-  \end{varwidth}
+  \vspace{6pt}
 
-% -------------------------
-% PROJECTS & RESEARCH
-% -------------------------
-  \section{\centerline{PROJECTS \& RESEARCH}}
-  Honeypot Analysis and Visualization Tool (FYP)
-  \begin{itemize}\smallskip
-    \item Analyzed data from honeypots (Dionaea, Suricata, Kippo).
-    \item Visualized data intensity on geographical maps.
-    \item Centralized data in MongoDB for increased performance.
+  \textbf{\href{https://github.com/msohailse/SWAM}{SWAM: Scalable Event-Driven Incident Management System}} \\
+  {\sl Quarkus (Jakarta EE, JAX-RS), Angular, PostgreSQL, Kafka, Kubernetes} \smallskip
+  \begin{itemize}
+    \item Designed a hexagonal (ports-and-adapters) architecture isolating the core domain behind a REST API built with Jakarta EE on Quarkus, using a lightweight CQRS read path.
+    \item Implemented event-driven duplicate detection: the API publishes incident-creation events to a Kafka topic, consumed asynchronously by an independent analyzer service using fuzzy text-similarity matching, reporting back without blocking the write path.
+    \item Enforced role-based access control with incident visibility scoped to departments and transactional write operations.
+    \item Deployed via Docker Compose locally and Kubernetes in production, with the API service horizontally autoscaled.
+    \item Verified the event-driven flow with Testcontainers-based integration tests.
   \end{itemize}
+  \vspace{6pt}
 
-  \href{https://github.com/msohailse/SWAM}{{\large SWAM: Scalable Event-Driven Incident Management System}} \\
-  \textit{Quarkus (Jakarta EE, JAX-RS, CDI, JPA), Angular, PostgreSQL, Kafka, Docker, Kubernetes} \\
-  \textit{Personal project -- see the full \href{https://github.com/msohailse/SWAM/blob/main/technical-report.pdf}{technical report} for details}
-  \begin{itemize}\smallskip
-    \item Designed a hexagonal (ports-and-adapters) architecture isolating the core domain behind a REST API built with Jakarta EE, JAX-RS, CDI, and JPA on Quarkus, with a lightweight CQRS read path.
-    \item Implemented event-driven duplicate detection: the API publishes incident-creation events to a Kafka topic, consumed asynchronously by an independent analyzer service using fuzzy text-similarity matching, which reports back via a second topic without blocking the write path.
-    \item Enforced role-based access control (Reporter, Department Admin, Super Admin) with incident visibility scoped to departments and transactional write operations.
-    \item Deployed via Docker Compose locally and Kubernetes in production, with the API service horizontally autoscaled (1--5 replicas, targeting 50\% CPU) independently of the analyzer service.
-    \item Verified the event-driven flow with Testcontainers-based integration tests and unit tests for domain logic.
-  \end{itemize}
-
-  \href{https://youtu.be/0133H3u1IlU}{{\large Encrypted Document Vault with Sharing Control (Distributed Secure Platform)}} \\
-  \textit{Go (Golang), Angular, RabbitMQ, MongoDB, Docker, WebSockets}
-  \begin{itemize}\smallskip
-    \item Engineered a secure, distributed document vault platform for sharing sensitive files with full owner control, utilizing Go (Golang) for high-performance backend services and Angular/JavaScript for a responsive frontend.
-    \item Designed a multi-instance distributed architecture to support horizontal scaling, ensuring system-wide state consistency (e.g., document deletion/access revocation) by using RabbitMQ (AMQP) for reliable event dispatching across all instances.
-    \item Implemented a real-time ``Eye Tracking System'' via WebSockets to instantly notify document owners of current viewers, tracking access by IP address and browser fingerprint for traceability.
-    \item Enforced comprehensive security, including AES-256 file encryption with user-specific keys, configurable time-limited/burn-once links, and instant system-wide access revocation.
-    \item Integrated anti-capture measures including watermarking and client-side hardening to restrict copying, downloading, and developer tool access within the document view.
-    \item Utilized Docker and Docker Compose for containerization and deployment, structuring the backend with a clean repository pattern using Go generics for testability and separation of concerns.
+  \textbf{\href{https://youtu.be/0133H3u1IlU}{Encrypted Document Vault with Sharing Control}} \\
+  {\sl Go (Golang), Angular, RabbitMQ, MongoDB, Docker, WebSockets} \smallskip
+  \begin{itemize}
+    \item Engineered a secure, distributed document vault platform for sharing sensitive files with full owner control.
+    \item Designed a multi-instance distributed architecture to support horizontal scaling, ensuring system-wide state consistency by using RabbitMQ (AMQP) for reliable event dispatching across instances.
+    \item Implemented a real-time ``Eye Tracking System'' via WebSockets to instantly notify document owners of current viewers, tracking access by IP address and browser fingerprint.
+    \item Enforced comprehensive security with AES-256 file encryption, configurable burn-once links, and instant system-wide access revocation.
   \end{itemize}
 
 % -------------------------
