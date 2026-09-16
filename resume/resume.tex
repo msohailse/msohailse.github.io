@@ -259,7 +259,7 @@
   \begin{itemize}\smallskip
     \item Designed a hexagonal (ports-and-adapters) architecture isolating the core domain behind a REST API built with Jakarta EE, JAX-RS, CDI, and JPA on Quarkus, with a lightweight CQRS read path.
     \item Implemented event-driven duplicate detection: the API publishes incident-creation events to a Kafka topic, consumed asynchronously by an independent analyzer service using fuzzy text-similarity matching, which reports back via a second topic without blocking the write path.
-    \item Enforced role-based access control (Reporter, Department Admin, Super Admin) with department-scoped incident visibility and transactional write operations.
+    \item Enforced role-based access control (Reporter, Department Admin, Super Admin) with incident visibility scoped to departments and transactional write operations.
     \item Deployed via Docker Compose locally and Kubernetes in production, with the API service horizontally autoscaled (1--5 replicas, targeting 50\% CPU) independently of the analyzer service.
     \item Verified the event-driven flow with Testcontainers-based integration tests and unit tests for domain logic.
   \end{itemize}
