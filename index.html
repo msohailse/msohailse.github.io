@@ -344,25 +344,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </details>
 
+        <details class="work-card">
+          <summary>
+            <p class="work-kicker">Security · Distributed Systems</p>
+            <h3>Encrypted Document Vault</h3>
+            <p class="work-summary">A secure, distributed document-sharing platform featuring AES-256 encryption, time-limited/burn-once links, and RabbitMQ state consistency for instant access revocation.</p>
+            <p class="work-stack">Go · RabbitMQ · Angular · WebSockets · Docker</p>
+            <span class="work-toggle">Read the story</span>
+          </summary>
+          <div class="work-details">
+            <p><strong>The Challenge:</strong> Building a highly secure, horizontally scalable platform that allows full owner control over sensitive documents, including instant, system-wide access revocation across all active instances.</p>
+            <p><strong>The Implementation:</strong> Engineered with a high-performance Go backend and Angular frontend. Used RabbitMQ (AMQP) for reliable event dispatching and state consistency. Implemented a WebSocket-based "Eye Tracking System" to notify document owners in real-time when viewers open their files, logged by IP and browser fingerprint.</p>
+            <p><strong>The Impact:</strong> Successfully protected against data leaks by integrating comprehensive anti-capture measures (watermarking, client-side hardening) alongside cryptographic AES-256 safeguards. <a href="https://www.youtube.com/watch?v=0133H3u1IlU" target="_blank" rel="noopener">Watch the demo ↗</a></p>
+          </div>
+        </details>
+
       </div>
 
       <div class="more-projects">
         <h3 class="more-heading">More projects</h3>
         <ul class="more-list">
-          <li>
-            <details>
-              <summary>
-                <span class="more-title">Encrypted Document Vault</span>
-                <span class="more-stack">Go · RabbitMQ · Angular · Docker</span>
-              </summary>
-              <p>A distributed, horizontally-scalable document-sharing platform: AES-256 encryption
-                 with user-specific keys, time-limited or burn-once links, and RabbitMQ-based state
-                 consistency across instances so revoking access is instant everywhere. A
-                 WebSocket-based "eye tracking" system notifies the owner in real time when someone
-                 views their document, tracked by IP and browser fingerprint.
-                 <a href="https://www.youtube.com/watch?v=0133H3u1IlU" target="_blank" rel="noopener">Watch the demo ↗</a></p>
-            </details>
-          </li>
+
           <li>
             <details>
               <summary>
