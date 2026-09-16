@@ -161,6 +161,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="section-sub">AI systems, full-stack platforms, and healthcare tooling I've designed and shipped end to end. Click a card for the full story.</p>
 
       <div class="work-grid">
+        <details class="work-card" open>
+          <summary>
+            <p class="work-kicker">Next.js 15 · AI Workflow</p>
+            <h3>Iterca Coaching Platform</h3>
+            <p class="work-summary">Architected a multi-tenant coaching marketplace with a robust double-entry ledger, automated payout escrow via webhook state machines, and a standalone MCP server for secure AI access to private meetings.</p>
+            <p class="work-stack">Next.js 15 · PostgreSQL · AWS Amplify · MCP</p>
+            <span class="work-toggle">Read the story</span>
+          </summary>
+          <div class="work-details">
+            <p><strong>The Challenge:</strong> Building a scalable coaching platform that securely handles double-entry accounting, automates payouts for 50+ coaches via Calendly, and securely integrates AI for meeting intelligence without data leakage.</p>
+            <p><strong>The Architecture:</strong> A distributed Next.js (App Router) environment deployed to AWS Amplify, backed by an AWS RDS PostgreSQL database inside a secure VPC. A standalone Model Context Protocol (MCP) server was engineered alongside it to enforce granular, role-based access control (RBAC) over meeting notes.</p>
+            <p><strong>The Impact:</strong> Successfully deployed a high-performance (Edge cached) zero-downtime platform that autonomously manages credit deduplication, completely preventing race conditions and automated 20-tab exploitation attempts during checkout.</p>
+          </div>
+        </details>
+
+
 
         <details class="work-card">
           <summary>
@@ -400,6 +416,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 class="section-heading">Experience</h2>
 
       <ol class="timeline">
+        <li>
+          <div class="timeline-when">Mar 2026 – Sep 2026</div>
+          <div class="timeline-body">
+            <h3>Iterca Platform <span>Senior Software Engineer / Platform Engineer</span></h3>
+            <p>Engineered a robust coaching marketplace backend utilizing Next.js 15, React Server Components (RSC), and AWS Amplify. Designed a complex double-entry financial ledger with strict concurrency controls to prevent race conditions. Integrated a Model Context Protocol (MCP) server for secure AI-driven workflows and orchestrated an automated payout state machine via Calendly and Payoneer APIs.</p>
+          </div>
+        </li>
         <li>
           <div class="timeline-when">Sep 2018 – Present</div>
           <div class="timeline-body">
