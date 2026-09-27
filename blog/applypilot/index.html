@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A local job-search dashboard, feature by feature | Muhammad Sohail</title>
+<meta name="description" content="How I run my job search from a local dashboard on SQLite: honest outcome tracking, a report tab, per-job tailored resumes and cover letters, resume variants, an LLM skills analysis, and a daily goal of five applications with a streak.">
+<meta name="theme-color" content="#fbf9f4">
+<link rel="canonical" href="https://msohail.work/blog/applypilot/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Muhammad Sohail">
+<meta property="og:title" content="A local job-search dashboard, feature by feature">
+<meta property="og:description" content="Honest outcome tracking, a report tab, per-job tailored resumes and cover letters, resume variants, an LLM skills analysis, and a daily goal of five applications with a streak.">
+<meta property="og:url" content="https://msohail.work/blog/applypilot/">
+<meta property="og:image" content="https://msohail.work/images/profilepic.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="A local job-search dashboard, feature by feature">
+<meta name="twitter:description" content="Honest outcome tracking, per-job tailored resumes, resume variants, an LLM skills analysis, and a daily goal of five applications with a streak.">
+<meta name="twitter:image" content="https://msohail.work/images/profilepic.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">MS</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/#education">Education</a>
+      <a href="/#work">Work</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#writing">Writing</a>
+      <a href="/#book">Book a call</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="/#education">Education</a>
+    <a href="/#work">Work</a>
+    <a href="/#experience">Experience</a>
+    <a href="/#writing">Writing</a>
+    <a href="/#book">Book a call</a>
+    <a href="/#contact">Contact</a>
+  </nav>
+</header>
+
+<main class="post">
+  <div class="wrap">
+    <a class="post-back" href="/#writing">&larr; Back to writing</a>
+    <article>
+      <h1>A local job-search dashboard, feature by feature</h1>
+      <p class="post-meta">Muhammad Sohail &middot; 27 Sep 2026 &middot; 4 min read</p>
+
+      <div class="post-body">
+        <p>I run my whole job search from a dashboard on localhost &mdash; it started as a
+        fork of an open-source job tracker that I&rsquo;ve reshaped around how I actually
+        apply. No cloud, no account, no &ldquo;we&rsquo;ll email you&rdquo;. One Python process and a
+        SQLite file on port 8765. This round of work was about honest numbers and a
+        daily habit you&rsquo;ll actually keep.</p>
+
+        <h2>What&rsquo;s in it at a glance</h2>
+        <ul>
+          <li>A daily goal of 5 applications, with a streak counter and time-to-goal.</li>
+          <li>Real outcome tracking (interviewing / offer / rejected / no deal) that keeps
+            your applied history honest.</li>
+          <li>A report tab: pipeline, success ratio per stage, day-by-day applications.</li>
+          <li>One-click skills analysis across every job scoring 7+.</li>
+          <li>LLM key-concept highlights, saved on each job card.</li>
+          <li>Resume variants (Italy / Norway) that flow through resumes, cover letters,
+            and the public PDF links on my site.</li>
+          <li>Tailored resume and cover letter per job, with optional extra instructions.</li>
+          <li>Tagged todos and a read-only Gmail inbox view.</li>
+        </ul>
+
+        <h2>Daily goal, streaks, and time-to-goal</h2>
+        <p>A slim HUD sits at the top of the dashboard: <code>4 / 5</code> with a progress
+        bar, a streak counter, and your best streak. Hit the fifth application and it
+        throws confetti and reports how long it took &mdash; from the first application of
+        the day to the one that finished the goal. Today: 1h 46m.</p>
+        <p>The count includes every application made that day, regardless of how it later
+        resolves, so logging an interview next week doesn&rsquo;t erase the fact that you
+        applied. The streak counts consecutive days that hit 5; today stays &ldquo;in
+        progress&rdquo; until it&rsquo;s done, so an unfinished morning doesn&rsquo;t break the run.</p>
+
+        <h2>Tracking that stays honest</h2>
+        <p>The old toggle was applied / not-applied, which stops being useful a few weeks
+        in. Now each job moves through real stages. Two rules I refused to compromise on:</p>
+        <ul>
+          <li>A rejection doesn&rsquo;t erase the application. The date stays, so history stays
+            true.</li>
+          <li>&ldquo;Stale&rdquo; jobs (gone from the board, but I did apply) are kept and hidden
+            from the active list, never deleted. Deleting them would quietly inflate my
+            success rate.</li>
+        </ul>
+
+        <h2>Report tab</h2>
+        <p>Pipeline counts, success ratio at each stage, and a day-by-day breakdown of
+        applications. The headline number is &ldquo;applications sent&rdquo; and nothing else &mdash;
+        no vanity metrics, no invented score.</p>
+
+        <h2>Skills analysis</h2>
+        <p>One button reads every job scoring 7+ and writes a consolidated list of what
+        the market keeps asking for, plus where my gaps are. It&rsquo;s a market view, not a
+        per-job one, and it&rsquo;s saved so I can re-read it before a batch of applications.</p>
+
+        <h2>Highlights and cover letters</h2>
+        <p>Highlight a job and an LLM pulls out the key concepts as chips on the card.
+        Cover letters generate from the description, and you can add extra instructions
+        first (&ldquo;lead with the platform work, skip the frontend bullets&rdquo;). The same
+        works for the tailored resume.</p>
+
+        <h2>Resumes: tailored per job, variant per country</h2>
+        <p>I keep two versions of my resume &mdash; one for Italy (Italian phone, Florence)
+        and one for Norway. A dropdown picks the variant, and it flows through resume
+        generation, cover letters, and the public PDF links on my site. Adding a third
+        country is a single command.</p>
+        <p>Files download properly instead of opening a raw path, they get filed under
+        <code>downloads/</code>, and deleting one is a click on the file itself with a
+        confirmation &mdash; not a blunt &ldquo;remove everything&rdquo;.</p>
+
+        <h2>Todos and inbox</h2>
+        <p>Todos are tagged, so I filter them by context. Inbox insights connect
+        (read-only) to Gmail and surface recruiter replies against the matching job.</p>
+
+        <h2>What I learned building it</h2>
+        <p>The unglamorous parts mattered most. Cleaning up the apply URLs &mdash; the
+        scraper had stored the literal string <code>"None"</code> for 369 jobs, so the
+        Apply button pointed at <code>localhost/None</code> &mdash; did more for the tool
+        than any new button. Keeping rejected and stale jobs in the data instead of
+        deleting them is what makes the success rate worth trusting. And the hardest
+        feature to build wasn&rsquo;t technical at all: it was the streak, because it&rsquo;s the
+        only thing that gets me to open the dashboard on a bad day.</p>
+        <p>If you&rsquo;re in a long search, build the smallest dashboard that mirrors your
+        real workflow, and make one number on it honest. The rest follows.</p>
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; <span id="year"></span> Muhammad Sohail</p>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

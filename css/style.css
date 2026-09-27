@@ -638,3 +638,63 @@ h1, h2, h3 {
   color: var(--ink-faint);
   font-size: 13px;
 }
+
+/* ---------- blog post ---------- */
+
+.post { padding: 56px 0 24px; }
+
+.post-back {
+  font-family: var(--mono);
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--ink-faint);
+  display: inline-block;
+  margin-bottom: 28px;
+}
+.post-back:hover { color: var(--accent); }
+
+.post-meta {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-faint);
+  margin: 14px 0 0;
+}
+
+.post h1 { font-size: clamp(32px, 4.5vw, 44px); }
+
+.post-body { margin-top: 36px; }
+
+.post-body p {
+  color: var(--ink-soft);
+  margin: 0 0 20px;
+  max-width: 68ch;
+}
+.post-body > p:first-of-type {
+  color: var(--ink);
+  font-size: 19px;
+  font-family: var(--serif);
+}
+
+.post-body h2 {
+  font-size: 24px;
+  margin: 42px 0 14px;
+}
+
+.post-body ul {
+  margin: 0 0 22px;
+  padding-left: 22px;
+  color: var(--ink-soft);
+  max-width: 68ch;
+}
+.post-body li { margin-bottom: 8px; }
+
+.post-body code {
+  font-family: var(--mono);
+  font-size: 0.86em;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 1px 5px;
+}
+.post-body strong { color: var(--ink); }
+.post-body a { color: var(--accent); }
