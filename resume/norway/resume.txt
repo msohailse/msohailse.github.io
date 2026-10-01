@@ -2,7 +2,7 @@ MUHAMMAD SOHAIL
 Location: Tromsø, Norway
 Email: msohail.dev@gmail.com | Phone: +47 46276223
 GitHub: github.com/msohailse | LinkedIn: linkedin.com/in/sohail0992 | StackOverflow: sohail0992
-Portfolio: https://msohailse.github.io
+Portfolio: https://msohail.work
 
 SUMMARY
 Full-stack Software Engineer with 7+ years of experience building scalable, cloud-native applications using Node.js, TypeScript, React/Angular, and SQL/NoSQL databases. Strong background in designing microservices, APIs, and performance-optimized systems deployed on AWS and Kubernetes, with hands-on experience in CI/CD, testing, and cross-functional collaboration. AI enthusiast exploring agent-based systems and Retrieval-Augmented Generation (RAG) to build practical, data-driven automation solutions, with a strong interest in impact-driven and sustainability-focused products.
