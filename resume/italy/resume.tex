@@ -244,7 +244,8 @@
     \item \textbf{Frameworks}: Angular, React, Vue, Ionic, Express, FastAPI, Flutter, Quarkus, Pandas, NumPy, Behave, Mocha, Chai, Cypress, Selenium, Protractor, Highcharts, Recharts, Bootstrap
     \item \textbf{Databases}: MongoDB, MySQL, MsSQL, PostgreSQL, ElasticSearch
     \item \textbf{AI \& Automation}: n8n, RAG, OpenAI, IBM Watson (STT), Google Cloud Vision, GraphQL
-    \item \textbf{Cloud \& DevOps}: AWS (SNS/SQS), GCP (Compute Engine, Networking), Docker, Kubernetes, CI/CD, Jenkins, GitHub Actions, Apache, RabbitMQ, Kafka, Message Brokers, WebSockets, Cloudinary, Git (GitHub, GitLab)
+    \item \textbf{Cloud \& DevOps}: AWS (SNS/SQS), GCP (Compute Engine, Networking), Docker, Kubernetes, Helm, Istio, CI/CD, Jenkins, GitHub Actions, Apache, RabbitMQ, Kafka, Message Brokers, WebSockets, Cloudinary, Git (GitHub, GitLab)
+    \item \textbf{Observability \& Performance}: Prometheus, Grafana, Jaeger, PromQL, Distributed Tracing, Load Testing (Locust), Capacity Planning, Queueing Models
     \item \textbf{Architecture \& Practices}: System Design, Microservices, API Gateway, Event-Driven Systems, Performance Optimization, Scalability, Cloud Native Architecture, System Architecture Patterns, Hybrid Mobile Architecture, Distributed Systems Architecture
     \item \textbf{Tools}: Jupyter, NetBeans, Eclipse, VS Code, HTC Vive
   \end{itemize}
@@ -254,6 +255,17 @@
 % -------------------------
   \section{\centerline{Projects \& Research}}
 \vspace{6pt}
+  \textbf{\href{https://github.com/msohailse/microservices-demo-spe}{Microservices Performance Engineering: Observability, Capacity Modelling \& Scaling}} \\
+  {\sl Kubernetes, Helm, Istio (Envoy), Prometheus, Grafana, Jaeger, PromQL, Locust, JMT} \smallskip
+  \begin{itemize}
+    \item Deployed an 11-service gRPC microservices platform (Google Online Boutique) on Kubernetes with an Istio service mesh, and provisioned the observability stack (Prometheus, Grafana, Jaeger) via Helm (kube-prometheus-stack).
+    \item Set up zero-code distributed tracing through Envoy sidecars (Zipkin to Jaeger, 100\% sampling) and wrote PromQL queries for per-service throughput, mean latency and p95; automated collection of metrics and service dependency graphs into a single script.
+    \item Diagnosed a CrashLoopBackOff caused by CPU throttling that failed gRPC liveness probes on .NET and Node.js services, and retuned container CPU/memory limits to stabilise the cluster.
+    \item Load-tested with Locust from 10 to 200 concurrent users and built a queueing-network capacity model (validated in JMT) that predicted response times within 10\% up to 89\% bottleneck utilisation and located the frontend's saturation point ($\sim$58 req/s).
+    \item Scaled the bottleneck service horizontally based on the model, cutting mean response time by 79\% (199 to 41 ms) and p95 latency by 82\% (807 to 144 ms) at 100 concurrent users, with a cost analysis of the added CPU/memory.
+  \end{itemize}
+  \vspace{6pt}
+
   \textbf{Honeypot Analysis and Visualization Tool (FYP)}\\
   {\sl Data Analysis, MongoDB, Geo-Mapping} \smallskip
   \begin{itemize}
