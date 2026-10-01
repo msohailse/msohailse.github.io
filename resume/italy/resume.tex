@@ -258,7 +258,7 @@
   \textbf{\href{https://github.com/msohailse/microservices-demo-spe}{Microservices Performance Engineering: Observability, Capacity Modelling \& Scaling}} \\
   {\sl Kubernetes, Helm, Istio (Envoy), Prometheus, Grafana, Jaeger, PromQL, Locust, JMT} \smallskip
   \begin{itemize}
-    \item Deployed an 11-service gRPC microservices platform (Google Online Boutique) on Kubernetes with an Istio service mesh, and provisioned the observability stack (Prometheus, Grafana, Jaeger) via Helm (kube-prometheus-stack).
+    \item Deployed an 11-service gRPC e-commerce microservices platform (polyglot: Go, Java, .NET, Node.js, Python) on Kubernetes with an Istio service mesh, and provisioned the observability stack (Prometheus, Grafana, Jaeger) via Helm (kube-prometheus-stack).
     \item Set up zero-code distributed tracing through Envoy sidecars (Zipkin to Jaeger, 100\% sampling) and wrote PromQL queries for per-service throughput, mean latency and p95; automated collection of metrics and service dependency graphs into a single script.
     \item Diagnosed a CrashLoopBackOff caused by CPU throttling that failed gRPC liveness probes on .NET and Node.js services, and retuned container CPU/memory limits to stabilise the cluster.
     \item Load-tested with Locust from 10 to 200 concurrent users and built a queueing-network capacity model (validated in JMT) that predicted response times within 10\% up to 89\% bottleneck utilisation and located the frontend's saturation point ($\sim$58 req/s).
