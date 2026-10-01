@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.14)  1 OCT 2026 14:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.14)  1 OCT 2026 14:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -451,19 +451,19 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 52.
 LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
-ut line 55.
+ut line 56.
 
 (/Users/msohailse/Library/texmf/tex/latex/fontawesome/ufontawesometwo.fd
 File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 )
 LaTeX Font Info:    Trying to load font information for U+fontawesomethree on i
-nput line 57.
+nput line 58.
 
 (/Users/msohailse/Library/texmf/tex/latex/fontawesome/ufontawesomethree.fd
 File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
 )
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 7
-5.
+6.
 
 (/usr/local/texlive/2026basic/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -473,9 +473,9 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 dftex.map}{/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
 }{/Users/msohailse/Library/texmf/fonts/enc/dvips/fontawesome/fontawesometwo.enc
 }{/Users/msohailse/Library/texmf/fonts/enc/dvips/fontawesome/fontawesomethree.e
-nc}{/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr
-/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/te
-xlive/2026basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}] [2] [3] [4] [5] [
+nc}{/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [2{
+/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/loca
+l/texlive/2026basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}] [3] [4] [5] [
 6]
  ***********
 LaTeX2e <2025-11-01>
@@ -489,7 +489,7 @@ Here is how much of TeX's memory you used:
  40957 multiletter control sequences out of 15000+600000
  666017 words of font info for 63 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 75i,11n,79p,616b,618s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,616b,635s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/msohailse/Library/texmf/fonts/type1/public/fontawesome/FontAwesome.pf
 b></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></u
 sr/local/texlive/2026basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/lo
@@ -499,7 +499,7 @@ xlive/2026basic/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2
 sic/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2026basic/t
 exmf-dist/fonts/type1/public/lm/lmsy10.pfb></Users/msohailse/Library/texmf/font
 s/type1/public/marvosym/marvosym.pfb>
-Output written on resume.pdf (6 pages, 203105 bytes).
+Output written on resume.pdf (6 pages, 203132 bytes).
 PDF statistics:
  113 PDF objects out of 1000 (max. 8388607)
  83 compressed objects within 1 object stream
