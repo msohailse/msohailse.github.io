@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.14)  1 OCT 2026 20:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.14)  1 OCT 2026 20:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -489,7 +489,7 @@ Here is how much of TeX's memory you used:
  40957 multiletter control sequences out of 15000+600000
  666017 words of font info for 63 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 75i,11n,79p,616b,635s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,616b,621s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/msohailse/Library/texmf/fonts/type1/public/fontawesome/FontAwesome.pf
 b></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></u
 sr/local/texlive/2026basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/lo
@@ -499,10 +499,10 @@ xlive/2026basic/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2
 sic/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2026basic/t
 exmf-dist/fonts/type1/public/lm/lmsy10.pfb></Users/msohailse/Library/texmf/font
 s/type1/public/marvosym/marvosym.pfb>
-Output written on resume.pdf (6 pages, 205392 bytes).
+Output written on resume.pdf (6 pages, 205586 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
- 84 compressed objects within 1 object stream
+ 113 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
  7 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
