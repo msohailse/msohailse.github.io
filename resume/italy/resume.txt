@@ -29,6 +29,14 @@ CERTIFICATIONS
 
 AI & AUTOMATION
 
+AI Agent & MCP Server: Natural-Language Invoicing Platform
+- Designed and shipped a production Model Context Protocol (MCP) server (TypeScript, Express, stateless Streamable HTTP) that lets an LLM chat client operate a business invoicing platform in natural language: creating clients and invoices from a single freeform message, attaching payment links, emailing invoices and reconciling payments through tools proxied to a REST API over an internal network.
+- Built an LLM drafting pipeline that turns freeform messages into structured client and invoice drafts using JSON mode with Zod schema validation (line items, currency inferred from client country, natural-language bill dates normalized to ISO), while deterministic server-side rules handle fee gross-up, currency and receiving-account selection so the model never decides monetary amounts.
+- Implemented a security-first agent design: SHA-256-hashed, rotatable, brand-scoped per-admin API keys issued only by super-admins and sent via Authorization/X-API-Key headers so secrets never enter the chat transcript, owner-scoped authorization on every tool, per-IP rate limiting, and a create -> human-review PDF -> send workflow so the agent never emails clients without confirmation.
+- Built a public AI receptionist chat strictly isolated from the agent: text-only (no tool calling), prompt-injection hardening (role sanitization, length caps, link allow-listing), rate limiting, multi-provider LLM routing with automatic fallback, and an automated boundary test that fails the build if the public chat ever imports admin code or gains tools.
+- Automated payment reconciliation with an idempotent scheduled job that matches a multi-currency payment provider's read-only statement API against unpaid invoices by reference and amount, supporting USD/EUR/GBP invoices with bank/SEPA details, QR pay links and PDF generation.
+- Performed a security audit and hardening of the Next.js 16 (App Router) application: patched a critical framework RCE advisory and all dependency CVEs (clean npm audit), added login brute-force lockout, password-bound session revocation and security headers (HSTS), and shipped Dockerized CI/CD to AWS via GitHub Actions with Vitest test gates.
+
 SigenStor AI Agent: RAG-Driven Energy Consultant
 - Engineered an AI agent using n8n and PostgreSQL to maintain session-aware state, leveraging historical dialogue to provide contextually accurate responses throughout the customer journey.
 - Developed a RAG (Retrieval-Augmented Generation) pipeline using vector embeddings to ingest technical manuals and pricing data, enabling the LLM to deliver precise, zero-hallucination technical support.
