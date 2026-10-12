@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.14)  1 OCT 2026 20:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.14)  11 OCT 2026 02:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -467,6 +467,12 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 7
 
 (/usr/local/texlive/2026basic/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
+08.
+
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [1
 
 {/Users/msohailse/Library/texlive/2026basic/texmf-var/fonts/map/pdftex/updmap/p
@@ -474,22 +480,22 @@ dftex.map}{/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
 }{/Users/msohailse/Library/texmf/fonts/enc/dvips/fontawesome/fontawesometwo.enc
 }{/Users/msohailse/Library/texmf/fonts/enc/dvips/fontawesome/fontawesomethree.e
 nc}{/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [2{
-/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/loca
-l/texlive/2026basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}] [3] [4] [5] [
-6]
+/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/
+local/texlive/2026basic/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}] [3] [4] [5] [
+6] [7]
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 12425 strings out of 469006
- 190272 string characters out of 5454813
- 601422 words of memory out of 5000000
- 40957 multiletter control sequences out of 15000+600000
- 666017 words of font info for 63 fonts, out of 8000000 for 9000
+ 12470 strings out of 469006
+ 190994 string characters out of 5454813
+ 602422 words of memory out of 5000000
+ 40997 multiletter control sequences out of 15000+600000
+ 666336 words of font info for 64 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 75i,11n,79p,616b,621s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,616b,617s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/msohailse/Library/texmf/fonts/type1/public/fontawesome/FontAwesome.pf
 b></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></u
 sr/local/texlive/2026basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/lo
@@ -497,12 +503,13 @@ cal/texlive/2026basic/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/te
 xlive/2026basic/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2
 026basic/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2026ba
 sic/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2026basic/t
-exmf-dist/fonts/type1/public/lm/lmsy10.pfb></Users/msohailse/Library/texmf/font
-s/type1/public/marvosym/marvosym.pfb>
-Output written on resume.pdf (6 pages, 205969 bytes).
+exmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026basic/texmf-
+dist/fonts/type1/public/lm/lmtt10.pfb></Users/msohailse/Library/texmf/fonts/typ
+e1/public/marvosym/marvosym.pfb>
+Output written on resume.pdf (7 pages, 231855 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
- 83 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
+ 124 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
+ 8 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
