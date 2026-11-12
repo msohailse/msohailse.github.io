@@ -1,5 +1,9 @@
 \documentclass{res} % Overlapped headings (default), negative skips removed in res.cls
 
+% Variant hooks: italy/ and norway/ resume.tex set these before \input-ing this file.
+\providecommand{\resLocation}{Troms\o, Norway}
+\providecommand{\resPhone}{+47 46276223}
+
 % ------------------------------------------------------------------------------
 % Packages
 % ------------------------------------------------------------------------------
@@ -49,10 +53,11 @@
 \begin{resume}
   \begin{center}
     {\Large\bfseries Muhammad Sohail}\\[4pt]
+    {\bfseries AI Full-Stack Engineer \textbar{} LLM Agents, RAG, MCP \textbar{} TypeScript, React, Node.js, AWS}\\[4pt]
     \Mundus~\url{https://msohail.work}\\[2pt]
-    Tromsø, Norway\\[6pt]
+    \resLocation\\[6pt]
     \Letter\ \href{mailto:msohail.dev@gmail.com}{msohail.dev@gmail.com} \quad
-    \Mobilefone\ +47 46276223 \\[2pt]
+    \Mobilefone\ \resPhone \\[2pt]
     \faGithub\ \href{https://github.com/msohailse}{msohailse}\quad
     \faLinkedin\ \href{https://linkedin.com/in/sohail0992}{sohail0992}\quad
     \faStackOverflow\ \href{https://stackoverflow.com/users/5629494/sohail}{sohail}
@@ -63,27 +68,27 @@
 % -------------------------
   \section{\centerline{SUMMARY}}
 \vspace{6pt}
-  Full-stack Software Engineer with 7+ years of experience building scalable, cloud-native applications using Node.js, TypeScript, React/Angular, and SQL/NoSQL databases. Strong background in designing microservices, APIs, and performance-optimized systems deployed on AWS and Kubernetes, with hands-on experience in CI/CD, testing, and cross-functional collaboration. AI enthusiast exploring agent-based systems and Retrieval-Augmented Generation (RAG) to build practical, data-driven automation solutions, with a strong interest in impact-driven and sustainability-focused products.
+  AI full-stack engineer with 7+ years of experience building and running cloud-native applications with TypeScript/Node.js, React, Angular, Nuxt, PostgreSQL, AWS and Kubernetes. Now focused on production AI systems: LLM agents with tool use, RAG pipelines on vector search, MCP servers and multi-agent engineering workflows, with cost caps, isolation, supervision and audit logging built in, plus ML classification models trained from scratch. Delivers live products from data model and API to UI, CI/CD and cloud infrastructure, with an interest in impact-driven and sustainability-focused products.
 
 % -------------------------
 % EDUCATION
 % -------------------------
   \section{\centerline{EDUCATION}}
 \vspace{6pt}
-  \textbf{UiT Norges arktiske universitet} \hfill Sep 2026 -- Present\\
-  {\sl Master's Degree \textit{(In Progress)}}
+  \textbf{UiT The Arctic University of Norway} \hfill Sep 2026 -- Jan 2027\\
+  {\sl Master in Computer Science}
   \begin{itemize}\smallskip
-    \item \textbf{Relevant Coursework:} Machine Learning, Advanced Computer Security
+    \item \textbf{Relevant Coursework:} Machine Learning (supervised and unsupervised learning, decision trees, neural networks) and Advanced Computer Security (information-flow control, side-channel attacks, fuzz testing and verification)
   \end{itemize}
 
-  \textbf{Universit\`a degli Studi di Firenze} \hfill Jul 2025 -- Sep 2026\\
-  {\sl MS, Software, Science and Technology}
+  \textbf{Universit\`a degli Studi di Firenze} \hfill Sep 2024 -- Sep 2026\\
+  {\sl Master's Degree, Software: Science and Technology}
   \begin{itemize}\smallskip
     \item \textbf{Relevant Coursework:} Architecture, Model and Analysis of Cyber-Physical Systems, Data Collection and Machine Learning for Critical Cyber-Physical Systems, Distributed Programming for Web, IoT and Mobile Systems, Natural Language Processing, Statistical Methods for Computer Science
   \end{itemize}
 
-  \textbf{Riphah International University} \hfill Spring 2018\\
-  {\sl BS, Software Engineering (CGPA 3.05)}
+  \textbf{Riphah International University} \hfill 2014 -- 2018\\
+  {\sl Bachelor of Science, Computer Software Engineering (CGPA 3.05)}
 
 % -------------------------
 % CERTIFICATIONS
@@ -95,43 +100,6 @@
   React Certification \hfill TestDome\\
   Dart and Flutter: The Complete Developer's Guide \hfill Udemy\\
   English Proficiency Test \hfill \href{https://certs.duolingo.com/2d4b604aaf9455849b1450f4038d5e07}{Duolingo}
-
-% -------------------------
-% AI & AUTOMATION
-% -------------------------
-  \section{\centerline{AI \& AUTOMATION}}
-\vspace{6pt}
-  \textbf{AI Agent \& MCP Server: Natural-Language Invoicing Platform}
-  \begin{itemize}\smallskip
-    \item Designed and shipped a production Model Context Protocol (MCP) server (TypeScript, Express, stateless Streamable HTTP) that lets an LLM chat client operate a business invoicing platform in natural language: creating clients and invoices from a single freeform message, attaching payment links, emailing invoices and reconciling payments through tools proxied to a REST API over an internal network.
-    \item Built an LLM drafting pipeline that turns freeform messages into structured client and invoice drafts using JSON mode with Zod schema validation (line items, currency inferred from client country, natural-language bill dates normalized to ISO), while deterministic server-side rules handle fee gross-up, currency and receiving-account selection so the model never decides monetary amounts.
-    \item Implemented a security-first agent design: SHA-256-hashed, rotatable, brand-scoped per-admin API keys issued only by super-admins and sent via \texttt{Authorization}/\texttt{X-API-Key} headers so secrets never enter the chat transcript, owner-scoped authorization on every tool, per-IP rate limiting, and a create $\rightarrow$ human-review PDF $\rightarrow$ send workflow so the agent never emails clients without confirmation.
-    \item Built a public AI receptionist chat strictly isolated from the agent: text-only (no tool calling), prompt-injection hardening (role sanitization, length caps, link allow-listing), rate limiting, multi-provider LLM routing with automatic fallback, and an automated boundary test that fails the build if the public chat ever imports admin code or gains tools.
-    \item Automated payment reconciliation with an idempotent scheduled job that matches a multi-currency payment provider's read-only statement API against unpaid invoices by reference and amount, supporting USD/EUR/GBP invoices with bank/SEPA details, QR pay links and PDF generation.
-    \item Performed a security audit and hardening of the Next.js 16 (App Router) application: patched a critical framework RCE advisory and all dependency CVEs (clean npm audit), added login brute-force lockout, password-bound session revocation and security headers (HSTS), and shipped Dockerized CI/CD to AWS via GitHub Actions with Vitest test gates.
-  \end{itemize}
-
-  \textbf{SigenStor AI Agent: RAG-Driven Energy Consultant}
-  \begin{itemize}\smallskip
-    \item Engineered an AI agent using n8n and PostgreSQL to maintain session-aware state, leveraging historical dialogue to provide contextually accurate responses throughout the customer journey.
-    \item Developed a RAG (Retrieval-Augmented Generation) pipeline using vector embeddings to ingest technical manuals and pricing data, enabling the LLM to deliver precise, zero-hallucination technical support.
-    \item Integrated HomeWizard energy telemetry to automate residential system sizing, dynamically calculating battery capacity requirements based on 3-phase grid data and real-time load profiles.
-    \item Programmed automated validation logic for installation constraints, including electrical cable cross-section requirements ($5 \times 4\text{mm}^2$) and modular stack floor-loading limits ($70\text{kg}$ per unit).
-  \end{itemize}
-
-  \textbf{Document Intelligence \& Automated Form Processing}
-  \begin{itemize}\smallskip
-    \item Engineered an automated OCR pipeline using Google Cloud Vision, backed by an AWS Pub/Sub-based event pipeline, to digitize over 50k handwritten pamphlets from physical street campaigns, with throughput of up to 50,000 images per day, significantly reducing manual labor for administrative workflows.
-    \item Integrated OpenAI models to perform entity extraction and KPI derivation from unstructured OCR text, enabling automated pre-filling of digital records.
-    \item Created a dual-view interface where the system automatically pre-fills the digital form from the pamphlet image on one side and displays the actual image on the other, allowing a single operator to simply confirm the data and hit submit.
-  \end{itemize}
-
-  \textbf{Voice Intelligence \& Real-Time Transcription}
-  \begin{itemize}\smallskip
-    \item Developed a microservice leveraging WebSockets to stream call recordings to Watson Speech-to-Text, enabling real-time transcription and automated compliance monitoring.
-    \item Architected a security layer to identify sensitive information, such as unintended requests for passcodes or restricted data, within live audio streams.
-    \item Optimized streaming performance for high-volume call environments by integrating REST API hooks with asynchronous WebSocket events.
-  \end{itemize}
 
 % -------------------------
 % WORK EXPERIENCE
@@ -148,6 +116,7 @@
     \item Designed and co-architected the TRA API to manage real-time data flow between multiple apps and external booking systems, leveraging REST API principles for scalability and efficiency (Node.js, TypeScript).
     \item Designed the TRADB (MongoDB) schema for large-scale data handling and integrations.
     \item Optimized system performance and scalability by managing real-time synchronization across multiple Elastic indices, applying caching strategies, and tuning database queries.
+    \item Owned data operations for TRADB: built and ran 30+ repeatable Python jobs (pymongo, pandas, requests) for ETL from the booking system, large-scale backfills and data corrections, Elastic index rebuilds, payment-to-booking reconciliation, nightly inventory sync, and seeding dev environments from live records.
     \item Enabled booking-to-sales conversion by updating household records, converting leads to members, and indexing data in the Manifest System.
     \item Built the Engage App using Angular and TypeScript, enabling agents to track customer data (e.g., demographics, call history) and manage bookings within the same platform, significantly streamlining campaign workflows and improving agent productivity.
     \item Engineered the Manifest System (Angular, Node.js) to track bookings, agent performance, commissions, and the overall sales lifecycle.
@@ -164,25 +133,16 @@
     \item \emph{Quality Assurance}:
       \begin{itemize}
         \item Engineered complex Data Merging Logic for Household/Lead entities, utilizing Mocha \& Chai to validate 20+ edge cases (e.g., duplicate resolution, membership inheritance).
-        \item Implemented a robust Test-Driven Development (TDD) workflow using JSON fixtures to simulate API responses, ensuring zero-regression deployments.
+        \item Implemented a robust Test-Driven Development (TDD) workflow using JSON fixtures to simulate API responses, ensuring zero-regression deployments, plus behavior-driven (BDD) tests in Python with Behave.
         \item Developed the logic for Dynamic Meeting Payloads, validating attendee filtering rules (primary vs. secondary contacts) through automated assertion suites.
         \item \emph{CI/CD \& Reporting}: Integrated the test suite into Jenkins pipelines, configuring it to capture JSON test results and generate automated build reports for immediate feedback on code stability.
-      \end{itemize}
-    \item \emph{Python}:
-      \begin{itemize}
-        \item Used ChatGPT for data analysis, KPI derivation, and pre-filling forms.
-        \item Developed a FastAPI-based rule engine to validate data extracted via OCR against historical records to determine user eligibility and system compatibility.
-        \item Wrote behavior-driven tests using Behave.
-        \item Performed data cleaning with Pandas and built Jupyter notebooks for analysis.
       \end{itemize}
     \item \emph{Infrastructure \& CI/CD}:
       \begin{itemize}
         \item Optimized MongoDB cluster configurations, saving approximately \$12,000 annually while maintaining system performance and reliability.
         \item Led Kubernetes-based deployments and CI/CD pipeline improvements (Jenkins, GitHub Actions), incorporating Infrastructure as Code (IaC) practices to enhance scalability, resilience, and operational efficiency.
         \item Run 30+ Node.js and Python microservices in production on Azure Kubernetes Service (AKS), with secrets managed in Azure Key Vault, Elastic APM monitoring across services, and Jaeger distributed tracing on high-volume consumers.
-        \item Maintained real-time sync with Elastic indices.
         \item Created unit/behavior tests (Selenium, Chai, Mocha, Cypress) and integrated GitHub pipelines (JavaScript, Node.js).
-        \item Configured Jenkins pipelines for automated test reporting.
       \end{itemize}
   \end{itemize}
 
@@ -246,15 +206,71 @@
   \end{itemize}
 
 % -------------------------
+% AI & AUTOMATION
+% -------------------------
+  \section{\centerline{AI AGENTS \& AGENTIC AUTOMATION}}
+\vspace{6pt}
+  \textbf{Multi-Agent Engineering Team: Hermes Agents with Obsidian Memory} \\
+  {\sl Hermes agents, Obsidian, GitHub, SonarCloud, Buzz (Nostr-style relay)} \smallskip
+  \begin{itemize}
+    \item Run a personal multi-agent pipeline in a shared channel, each agent keeping memory in an Obsidian vault: a CTO agent triages work and delegates to a developer agent (test-first, opens PRs), a PR-review agent (green build, tests and Sonar plus deep review, merges only after QA sign-off) and a QA agent (runs the app, read-only database access, production check after each merge). ApplyBot's failure watcher posts alerts to the channel and tags the CTO agent, which triages each one and hands it to a developer agent.
+    \item Added a reverse-engineering agent that analyzes shipped artifacts statically and at runtime and returns cited evidence, an architecture map and a developer TODO list.
+  \end{itemize}
+  \vspace{6pt}
+
+  \textbf{ApplyBot: Pay-per-Search AI Job-Matching Product} \\
+  {\sl Next.js 15, TypeScript, PostgreSQL (RDS), Drizzle, AWS (Fargate, Lambda, Amplify), Amazon Bedrock, Better Auth, Vitest, GitHub Actions} \smallskip
+  \begin{itemize}
+    \item Designed, built and operate a production pay-per-search job-matching product at applybot.eu: a customer uploads a CV and sets target roles and places, a search finds jobs, an LLM on Bedrock scores each against the CV (per-search budget and token cap), and only strong matches are returned; the customer applies themselves.
+    \item Isolated every paid search in its own AWS Fargate container started through a launcher Lambda, with only a run-scoped token and no database access, per-customer and global concurrency limits, and an admin control to stop one or all running searches.
+    \item Implemented a central AI cost gate on every AI call, a scoped in-app support chat assistant (no tools, no database access, cost-capped per customer and IP) and a single-source money-back rule shared by UI, terms and refund API; tested with Vitest and Testcontainers, GitHub Actions CI, auto-deploy and a 25-check post-release script against the live site.
+  \end{itemize}
+  \vspace{6pt}
+
+  \textbf{Multi-App Billing \& Payments Platform with MCP Admin Server} \\
+  {\sl TypeScript, AWS Lambda, PostgreSQL, Drizzle, Stripe, Wise, MCP, Cloudflare Workers, SonarCloud} \smallskip
+  \begin{itemize}
+    \item Built and run in production a reusable billing module (private npm package) and hosted service that is the single payment system behind live apps such as ApplyBot, called over HTTP (hosted checkout, invoices, subscriptions, refunds, token wallet). Multi-merchant by design, with a separate API key, Stripe account and webhook secret per app; an app without Stripe keys fails closed.
+    \item Built an invoice and subscription ledger with an append-only events table, where settling an invoice, extending access and writing the ledger entry happen in one database transaction. Settlement is automatic for card payments (signed Stripe webhooks) and bank transfers (Wise statement matching that never guesses: a payment must name the invoice and cover at least 95\%). Added discount codes (100\% off, batches, product scoping), a TOTP-protected admin dashboard with audit log and a support module with secure attachments; about 420 tests run against a throwaway Docker Postgres.
+    \item Built an MCP server as the owner's chat-side admin connector: payment and transaction lookup, discount-code management and a support inbox, with revocable, expiring, hashed personal keys, per-key rate limits and audit logging. It has no refund or tax tools, and customer text is treated as untrusted.
+  \end{itemize}
+  \vspace{6pt}
+
+  \textbf{Agentic AI Scheduling ChatBot (Multi-Tenant SaaS)} \\
+  {\sl TypeScript, Nuxt 4, LangChain.js, n8n, Amazon Bedrock, PostgreSQL + pgvector, RAG, Python, AWS (SQS, Lambda, EventBridge, EC2), Docker} \smallskip
+  \begin{itemize}
+    \item Built a multi-tenant SaaS where each business connects its own channels (WhatsApp number, email and website chat) and an LLM agent (LangChain.js, DeepSeek on Bedrock, RAG on pgvector) books, reschedules and cancels appointments, runs a waitlist and sends birthday offers, on an event-driven pipeline of a per-business WhatsApp bridge, a Nuxt API, SQS with dead-letter queues and a Lambda worker.
+    \item Added n8n workflows with PostgreSQL session state and a RAG pipeline over product manuals and pricing data, so the agent keeps context across a customer's journey and gives grounded, accurate answers on every channel; also automated residential battery sizing from HomeWizard energy telemetry.
+    \item Created an ``Observer Harness'', a separate Python service woken by Postgres triggers on every customer message and agent error, that escalates in tiers (check, steer with a hidden note, take over with a fallback reply, then draft a fix PR for human review). It fails open and runs with a minimal-privilege database role.
+    \item Added agent guardrails (tool-call limits, per-customer and per-business reply caps, per-plan usage limits) and a Nuxt 4 owner dashboard; 200+ tests with scripted fake LLMs keep CI free of cloud credentials and LLM spend.
+  \end{itemize}
+  \vspace{6pt}
+
+  \textbf{Document Intelligence \& Automated Form Processing} \\
+  {\sl Google Cloud Vision, OpenAI, AWS Pub/Sub, OCR} \smallskip
+  \begin{itemize}
+    \item Engineered an OCR pipeline (Google Cloud Vision, AWS Pub/Sub events) digitizing over 50k handwritten pamphlets at up to 50,000 images per day, with OpenAI entity extraction and KPI derivation pre-filling digital records.
+    \item Created a dual-view interface showing the pre-filled form beside the pamphlet image so one operator confirms and submits.
+    \item Developed a FastAPI rule engine that validates the OCR-extracted data against historical records to determine user eligibility and system compatibility.
+  \end{itemize}
+  \vspace{6pt}
+
+  \textbf{Voice Intelligence \& Real-Time Transcription} \\
+  {\sl IBM Watson Speech-to-Text, WebSockets, Microservices} \smallskip
+  \begin{itemize}
+    \item Developed a WebSocket microservice streaming call recordings to Watson Speech-to-Text for real-time transcription and compliance monitoring, with a security layer detecting sensitive information in live audio.
+  \end{itemize}
+
+% -------------------------
 % SKILLS
 % -------------------------
   \section{\centerline{Skills}}
 \vspace{6pt}
   \begin{itemize}
+    \item \textbf{AI \& Automation}: LLM agents and tool use, RAG, vector search (pgvector), MCP, LangChain.js, Amazon Bedrock, OpenAI, DeepSeek, n8n, prompt-injection hardening, LLM cost and safety guardrails, ML classification, Google Cloud Vision, IBM Watson (STT), GraphQL
     \item \textbf{Languages}: TypeScript, Java, Python, Go, Node.js, Dart, C++
-    \item \textbf{Frameworks}: Angular, React, Vue, Ionic, Express, FastAPI, Flutter, Quarkus, Pandas, NumPy, Behave, Mocha, Chai, Cypress, Selenium, Protractor, Highcharts, Recharts, Bootstrap
+    \item \textbf{Frameworks}: Angular, React, Next.js, Nuxt, Vue, Ionic, Express, FastAPI, Flutter, Quarkus, Pandas, NumPy, Behave, Mocha, Chai, Cypress, Selenium, Protractor, Highcharts, Recharts, Bootstrap
     \item \textbf{Databases}: MongoDB, MySQL, MsSQL, PostgreSQL, ElasticSearch
-    \item \textbf{AI \& Automation}: n8n, RAG, OpenAI, IBM Watson (STT), Google Cloud Vision, GraphQL
     \item \textbf{Cloud \& DevOps}: AWS (SNS/SQS), Azure (AKS, Key Vault), GCP (Compute Engine, Networking), Docker, Kubernetes, Helm, Istio, CI/CD, Jenkins, GitHub Actions, Apache, RabbitMQ, Kafka, Message Brokers, WebSockets, Cloudinary, Git (GitHub, GitLab)
     \item \textbf{Observability \& Performance}: Prometheus, Grafana, Jaeger, Elastic APM, PromQL, Distributed Tracing, Load Testing (Locust), Capacity Planning, Queueing Models
     \item \textbf{Architecture \& Practices}: System Design, Microservices, API Gateway, Event-Driven Systems, Performance Optimization, Scalability, Cloud Native Architecture, System Architecture Patterns, Hybrid Mobile Architecture, Distributed Systems Architecture
