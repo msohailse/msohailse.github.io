@@ -11,11 +11,11 @@ EDUCATION
 
 UiT Norges arktiske universitet - Sep 2026 - Present
 Master's Degree (In Progress)
-- Relevant Coursework: Machine Learning, Advanced Computer Security
+- Coursework: Machine Learning, Advanced Computer Security
 
 Università degli Studi di Firenze - Jul 2025 - Sep 2026
 MS, Software, Science and Technology
-- Relevant Coursework: Architecture, Model and Analysis of Cyber-Physical Systems, Data Collection and Machine Learning for Critical Cyber-Physical Systems, Distributed Programming for Web, IoT and Mobile Systems, Natural Language Processing, Statistical Methods for Computer Science
+- Coursework: Architecture, Model and Analysis of Cyber-Physical Systems, Data Collection and Machine Learning for Critical Cyber-Physical Systems, Distributed Programming for Web, IoT and Mobile Systems, Natural Language Processing, Statistical Methods for Computer Science
 
 Riphah International University - Spring 2018
 BS, Software Engineering (CGPA 3.05)
