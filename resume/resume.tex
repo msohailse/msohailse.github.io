@@ -134,6 +134,7 @@
     \item Enabled booking-to-sales conversion by updating household records, converting leads to members, and indexing data in the Manifest System.
     \item Built the Engage App using Angular and TypeScript, enabling agents to track customer data (e.g., demographics, call history) and manage bookings within the same platform, significantly streamlining campaign workflows and improving agent productivity.
     \item Engineered the Manifest System (Angular, Node.js) to track bookings, agent performance, commissions, and the overall sales lifecycle.
+    \item Built and shipped the TRA AI Agent for finance, in production since Oct 2026 and replacing manual chargeback research across 26 Newbook and BridgePay accounts (details under AI Agents \& Agentic Automation).
     \item Data Visualization: Highcharts, Chart.js, Recharts, dashboard analytics, interactive reporting, real-time data visualization.
     \item Developed the DNQ System, a multi-part survey platform:
       \begin{itemize}
@@ -223,6 +224,18 @@
 % -------------------------
   \section{\centerline{\hskip\headshift\relax AI AGENTS \& AGENTIC AUTOMATION}}
 \vspace{13pt}
+  \textbf{TRA AI Agent for Finance: Chargeback \& Transaction Research (Production, Oct 2026)} \\
+  {\sl TypeScript, Node.js, Express, MongoDB, Azure AD (OIDC), BridgePay and Newbook APIs, Python, Angular, Zod} \smallskip
+  \begin{itemize}
+    \item Replaced manual chargeback and transaction research across 26 accounts (13 resorts $\times$ Newbook and BridgePay) with one plain-English question. The agent finds the member, resort and every related transaction from any single detail, including a card's last 4 shared by several members (matched by charge date and amount), and returns a bank-ready dispute report. Live in production since Oct 2026.
+    \item Ported the production cancellation-fee rules from a Python rules engine into TypeScript; the server computes the verdict and dispute evidence and hands it to the model as fixed facts, so verdicts stay consistent. When the records cannot answer a question, the agent says so and escalates to Microsoft Teams instead of guessing.
+    \item Integrated Azure AD/OIDC identity and implemented group-based access control: server-side group checks, a dashboard department gate, origin allow-listing, per-user conversation ownership, and audit logs that record routes, not content.
+    \item Read-only and confirmation-gated: no write tools, payment lookups only after a person confirms the member the server offered, bookings checked against that member, and Zod-validated inputs.
+    \item Designed per-user memory in MongoDB (30-message cap enforced in code and schema, idle reset, optimistic concurrency, 10 resumable chats kept 30 days) and card-number masking for every pasted format across server, chat widget and Teams escalation.
+    \item Covered by 91 automated tests and a 12-scenario evaluation against live data.
+  \end{itemize}
+  \vspace{6pt}
+
   \textbf{Multi-Agent Engineering Team: Hermes Agents with Obsidian Memory} \\
   {\sl Hermes agents, Obsidian, GitHub, SonarCloud, Buzz (Nostr-style relay)} \smallskip
   \begin{itemize}
