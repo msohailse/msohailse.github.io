@@ -35,9 +35,16 @@
 \renewcommand{\headrulewidth}{0pt}
 \setlength{\headheight}{24pt}
 \setlength{\headsep}{24pt}
+% Page layout: equal side margins (the template default is 1.5in left / 1.0in right).
+\newdimen\headshift
+\setlength{\textwidth}{6.3in}
+\setlength{\hsize}{6.3in}
+\setlength{\hoffset}{0.1in}
+\setlength{\headshift}{1.0in}
+\emergencystretch=3em
 \pagestyle{fancy}
 \cfoot{}
-\topmargin=-1.1in
+\topmargin=-0.667in
 
 % ------------------------------------------------------------------------------
 % Begin Document
@@ -67,19 +74,20 @@
 % -------------------------
 % SUMMARY
 % -------------------------
-  \section{\centerline{SUMMARY}}
-\vspace{6pt}
+  \section{\centerline{\hskip\headshift\relax SUMMARY}}
+\vspace{13pt}
+  {\setlength{\parskip}{5pt}\vspace{7pt}
   Full Stack Engineer with 7+ years of experience building scalable distributed systems, backed by DevOps and data expertise, now delivering agentic AI and LLM applications on top of that foundation. Strong background in designing microservices, REST APIs, and performance optimized systems deployed on Kubernetes, supported by CI/CD, testing, cross functional collaboration, and AI accelerated development workflows.
 
   Architects governed production AI systems built for real operational constraints: multi agent workflows, RBAC protected MCP servers, and grounded RAG pipelines on vector databases, engineered with cost caps, container isolation, supervision, and audit logging from day one alongside custom ML models.
 
-  Core stack spans TypeScript, Node.js, Python, Next.js, React, Angular, and SQL/NoSQL databases (PostgreSQL, MongoDB). Proven mobile delivery with shipped Flutter apps including \href{https://apps.apple.com/us/app/iride-drive-and-ride-app/id6480044898}{iRide} (60,000+ users) and \href{https://apps.apple.com/pk/app/hcai-surveillance-app/id1618890798}{HCAI} (a WHO backed surgical infection tracker built as a volunteer), and I'm drawn to impact-driven, sustainability-focused teams.
+  Core stack spans TypeScript, Node.js, Python, Next.js, React, Angular, and SQL/NoSQL databases (PostgreSQL, MongoDB). Proven mobile delivery with shipped Flutter apps including \href{https://apps.apple.com/us/app/iride-drive-and-ride-app/id6480044898}{iRide} (60,000+ users) and \href{https://apps.apple.com/pk/app/hcai-surveillance-app/id1618890798}{HCAI} (a WHO backed surgical infection tracker built as a volunteer), and I'm drawn to impact-driven, sustainability-focused teams.\par}
 
 % -------------------------
 % EDUCATION
 % -------------------------
-  \section{\centerline{EDUCATION}}
-\vspace{6pt}
+  \section{\centerline{\hskip\headshift\relax EDUCATION}}
+\vspace{13pt}
   \textbf{UiT The Arctic University of Norway} \hfill Sep 2026 -- Jan 2027\\
   {\sl Master in Computer Science}
   \begin{itemize}\smallskip
@@ -98,8 +106,8 @@
 % -------------------------
 % CERTIFICATIONS
 % -------------------------
-  \section{\centerline{Certifications}}
-\vspace{6pt}
+  \section{\centerline{\hskip\headshift\relax Certifications}}
+\vspace{13pt}
   \href{https://cp.certmetrics.com/amazon/en/public/verify/credential/6P5QC70DEB141536}{AWS Certified Cloud Practitioner} \hfill AWS\\
   MongoDB Certified \hfill MongoDB University\\
   React Certification \hfill TestDome\\
@@ -109,8 +117,9 @@
 % -------------------------
 % WORK EXPERIENCE
 % -------------------------
-  \section{\centerline{WORK EXPERIENCE}}
-\vspace{6pt}
+  \newpage
+  \section{\centerline{\hskip\headshift\relax WORK EXPERIENCE}}
+\vspace{13pt}
   % ---- Trident Marketing ----
   \textbf{Trident Marketing} \hfill Sep 2018 -- Present\\
   {\sl Tech Lead / Software Engineering Manager}
@@ -212,8 +221,8 @@
 % -------------------------
 % AI & AUTOMATION
 % -------------------------
-  \section{\centerline{AI AGENTS \& AGENTIC AUTOMATION}}
-\vspace{6pt}
+  \section{\centerline{\hskip\headshift\relax AI AGENTS \& AGENTIC AUTOMATION}}
+\vspace{13pt}
   \textbf{Multi-Agent Engineering Team: Hermes Agents with Obsidian Memory} \\
   {\sl Hermes agents, Obsidian, GitHub, SonarCloud, Buzz (Nostr-style relay)} \smallskip
   \begin{itemize}
@@ -268,8 +277,8 @@
 % -------------------------
 % SKILLS
 % -------------------------
-  \section{\centerline{Skills}}
-\vspace{6pt}
+  \section{\centerline{\hskip\headshift\relax Skills}}
+\vspace{13pt}
   \begin{itemize}\setlength{\itemsep}{6pt}
     \item \textbf{AI, ML \& Automation}: Machine Learning (PyTorch, scikit-learn, Classification, Supervised \& Unsupervised Learning, Neural Networks, Model Training \& Evaluation), LLMs, AI Agents, Agentic AI Development, Multi-Agent Systems, Tool Use, RAG, Vector Databases (pgvector), MCP, NLP, LangChain.js, Amazon Bedrock, OpenAI, DeepSeek, n8n, Prompt-Injection Hardening, LLM Cost \& Safety Guardrails, Google Cloud Vision, IBM Watson (STT)
     \item \textbf{Languages}: TypeScript, JavaScript, Python, Java, Go, Dart, C++, SQL
@@ -285,8 +294,8 @@
 % -------------------------
 % PROJECTS \& RESEARCH
 % -------------------------
-  \section{\centerline{Projects \& Research}}
-\vspace{6pt}
+  \section{\centerline{\hskip\headshift\relax Projects \& Research}}
+\vspace{13pt}
   \textbf{Microservices Performance Engineering: Observability, Capacity Modelling \& Scaling} \\
   {\sl Kubernetes, Helm, Istio (Envoy), Prometheus, Grafana, Jaeger, PromQL, Locust, JMT} \smallskip
   \begin{itemize}
@@ -333,8 +342,8 @@
 % -------------------------
 % ACHIEVEMENTS & LEADERSHIP
 % -------------------------
-  \section{\centerline{Achievements \& Leadership}}
-\vspace{6pt}
+  \section{\centerline{\hskip\headshift\relax Achievements \& Leadership}}
+\vspace{13pt}
   \textbf{\href{https://www.sst.unifi.it/vp-108-organizzazione.html}{Università degli Studi di Firenze}} \hfill Jul 2025 -- Sep 2026\\
   {\sl Student Representative}
   \begin{itemize}
