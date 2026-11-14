@@ -202,6 +202,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <details class="work-card">
           <summary>
+            <p class="work-kicker">AI Agent &middot; Production</p>
+            <h3>TRA Finance AI Agent (Transactions Query)</h3>
+            <p class="work-summary">Built and shipped the AI agent that lets finance answer chargeback and
+               transaction questions in plain English, replacing manual searches across 26 Newbook and
+               BridgePay accounts. Live in production since October 2026.</p>
+            <p class="work-stack">TypeScript &middot; Node.js &middot; MongoDB &middot; Azure AD &middot; Python</p>
+            <span class="work-toggle">Read the story</span>
+          </summary>
+          <div class="work-story">
+            <p>TRA runs 13 resorts, each with its own Newbook reservation account and its own BridgePay
+               merchant account: 26 accounts across two systems. A disputed charge can arrive with just a
+               card's last 4, a booking ID, a name, or a charge date and amount from the bank, and finance
+               had to log into each dashboard, work out which resort it belonged to, and assemble the
+               timeline for the bank by hand. The agent takes one plain-English question, finds the member
+               and resort from whatever detail is given, pulls every sale, refund, void and decline from
+               BridgePay and every charge, payment and refund from Newbook into one date-sorted table, and
+               for a chargeback writes the bank-ready report: outcome, timeline, records and judgment.</p>
+            <p>The part I care about most is that it can't improvise on money. I ported the production
+               cancellation-fee rules from a Python rules engine into TypeScript, so the server computes the
+               verdict and the dispute evidence and hands them to the model as fixed facts. It is read-only
+               with no write tools, payment lookups only start after a person confirms the member the server
+               offered, and access is gated by group checks on the company's Azure AD sign-in plus a
+               department gate in the dashboard. Conversations belong to their owner, card numbers are masked
+               in every pasted format, and when the records can't answer a question it says so and escalates
+               to Teams instead of guessing.</p>
+            <p>Memory lives in MongoDB: a 30-message window enforced in code and in the collection schema, an
+               idle reset, optimistic concurrency so two browser tabs can't overwrite each other, and the last
+               10 chats kept for 30 days so a case can be resumed. I built the agent and the chat widget on
+               top of our shared agent framework; 91 automated tests cover it, plus a 12-scenario evaluation
+               against live data.</p>
+            <figure style="margin:1.25rem 0 0">
+              <img src="/images/tra-ai-agent.png" alt="Transactions Query agent chat panel, labelled Newbook + BridgePay, read-only, with starter questions about chargebacks and cancellation fees" width="462" height="700" loading="lazy" style="width:100%;max-width:340px;height:auto;border-radius:8px;border:1px solid rgba(128,128,128,.3)">
+              <figcaption style="font-size:.85rem;opacity:.75;margin-top:.4rem">The chat embedded in the finance dashboard (empty state, no member data).</figcaption>
+            </figure>
+          </div>
+        </details>
+
+        <details class="work-card">
+          <summary>
             <p class="work-kicker">Next.js 15 · AI Workflow</p>
             <h3>Iterca Coaching Platform</h3>
             <p class="work-summary">Architected a multi-tenant coaching marketplace with a robust double-entry ledger, automated payout escrow via webhook state machines, and a standalone MCP server for secure AI access to private meetings.</p>
