@@ -168,6 +168,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="work-grid">
         <details class="work-card">
           <summary>
+            <p class="work-kicker">Node.js · Real-Time</p>
+            <h3>Lead &amp; Booking Platform (TRA)</h3>
+            <p class="work-summary">Co-architected the TRA API and TRADB schema powering real-time
+               lead-to-member conversion across Trident's booking and sales systems, handling 50k+ daily
+               calls.</p>
+            <p class="work-stack">Node.js · TypeScript · MongoDB · Kafka · Elasticsearch</p>
+            <span class="work-toggle">Read the story</span>
+          </summary>
+          <div class="work-story">
+            <p>TRA needed one real-time data layer under a handful of separate apps and external
+               booking systems, all touching the same household and lead records. I co-architected the
+               TRA API (Node.js/TypeScript, REST) and designed the TRADB MongoDB schema to hold that
+               data at scale, then built the Manifest System on top to track bookings, agent
+               performance, commissions, and where each lead sits in the sales lifecycle.</p>
+            <p>The hardest part wasn't the API, it was the data-merging logic: households and leads get
+               created independently across systems and have to be reconciled without losing history, so
+               I wrote extensive Mocha/Chai test suites covering 20+ edge cases (duplicate resolution,
+               membership inheritance, primary vs. secondary contact filtering on meeting payloads)
+               before any of it touched production. A message broker absorbs the high-volume call
+               traffic into TRADB, WebSockets push real-time reservation updates, Elastic indices stay
+               in sync for search, and re-tuning the MongoDB cluster configuration saved roughly
+               $12,000/year in infra cost without touching performance.</p>
+          </div>
+        </details>
+
+        <details class="work-card">
+          <summary>
             <p class="work-kicker">Next.js 15 · AI Workflow</p>
             <h3>Iterca Coaching Platform</h3>
             <p class="work-summary">Architected a multi-tenant coaching marketplace with a robust double-entry ledger, automated payout escrow via webhook state machines, and a standalone MCP server for secure AI access to private meetings.</p>
@@ -283,32 +310,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </details>
 
-        <details class="work-card">
-          <summary>
-            <p class="work-kicker">Node.js · Real-Time</p>
-            <h3>Lead &amp; Booking Platform (TRA)</h3>
-            <p class="work-summary">Co-architected the TRA API and TRADB schema powering real-time
-               lead-to-member conversion across Trident's booking and sales systems, handling 50k+ daily
-               calls.</p>
-            <p class="work-stack">Node.js · TypeScript · MongoDB · Kafka · Elasticsearch</p>
-            <span class="work-toggle">Read the story</span>
-          </summary>
-          <div class="work-story">
-            <p>TRA needed one real-time data layer under a handful of separate apps and external
-               booking systems, all touching the same household and lead records. I co-architected the
-               TRA API (Node.js/TypeScript, REST) and designed the TRADB MongoDB schema to hold that
-               data at scale, then built the Manifest System on top to track bookings, agent
-               performance, commissions, and where each lead sits in the sales lifecycle.</p>
-            <p>The hardest part wasn't the API, it was the data-merging logic: households and leads get
-               created independently across systems and have to be reconciled without losing history, so
-               I wrote extensive Mocha/Chai test suites covering 20+ edge cases (duplicate resolution,
-               membership inheritance, primary vs. secondary contact filtering on meeting payloads)
-               before any of it touched production. A message broker absorbs the high-volume call
-               traffic into TRADB, WebSockets push real-time reservation updates, Elastic indices stay
-               in sync for search, and re-tuning the MongoDB cluster configuration saved roughly
-               $12,000/year in infra cost without touching performance.</p>
-          </div>
-        </details>
+
 
         <details class="work-card">
           <summary>
