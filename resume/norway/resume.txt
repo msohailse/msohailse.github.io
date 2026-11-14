@@ -106,7 +106,7 @@ Flutter Developer (Contract/Part-Time)
 - Used BLoC and Dart null safety to deliver robust, testable state management.
 - Reduced MongoDB hosting costs from $1,500/mo to $300/mo (80% reduction) by implementing Redis caching, optimizing indices, and tuning queries.
 
-Code For Pakistan (Volunteer) - Mar 2021 - Present
+Code For Pakistan (Volunteer) - Mar 2021 - Nov 2026
 Web Engineer/Flutter Developer
 - Integrated a WhatsApp chatbot for the COVID-19 Telehealth Initiative, enabling identification and random assignment of high-risk patients to volunteer doctors (React, Node.js, PostgreSQL).
 - Built a Flutter-based mobile app for lab evaluations (LAARC-standard surveys) paired with a Vue.js dashboard for performance reporting (Flutter, Vue.js, Node.js).
